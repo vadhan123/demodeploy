@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeDrop | Blood Donation</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #252525;
+      background: #fff8f8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 8%;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+
+    .logo {
+      color: #c62828;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span { color: #333; }
+
+    nav a {
+      color: #444;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 7px;
+      border: none;
+      background: #d32f2f;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: #b71c1c; }
+
+    .hero {
+      min-height: 470px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 65px 10%;
+      background: linear-gradient(135deg, #fff 0%, #ffe4e4 100%);
+    }
+
+    .hero-content { max-width: 540px; }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: 48px;
+      color: #b71c1c;
+    }
+
+    .hero p {
+      color: #555;
+      line-height: 1.7;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .blood-drop {
+      width: 220px;
+      height: 280px;
+      background: #d32f2f;
+      border-radius: 50% 50% 55% 55%;
+      transform: rotate(45deg);
+      box-shadow: 0 15px 35px rgba(211,47,47,.28);
+      position: relative;
+    }
+
+    .blood-drop::after {
+      content: "♥";
+      position: absolute;
+      color: white;
+      font-size: 90px;
+      transform: rotate(-45deg);
+      top: 70px;
+      left: 62px;
+    }
+
+    .section {
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #b71c1c;
+      font-size: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 { margin: 8px 0; }
+
+    .card p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .form-section {
+      background: #b71c1c;
+      color: white;
+      padding: 60px 10%;
+    }
+
+    .form-section h2 { text-align: center; }
+
+    form {
+      max-width: 750px;
+      margin: 25px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    form .full { grid-column: 1 / -1; }
+
+    .submit-btn {
+      background: white;
+      color: #b71c1c;
+      padding: 14px;
+      border: none;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 22px;
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 16px 6%; }
+      nav .links { display: none; }
+      .hero { padding: 55px 8%; }
+      .hero h1 { font-size: 36px; }
+      .blood-drop { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      form .full { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Life<span>Drop</span></div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#donate">Donate</a>
+      <a href="#find">Find Blood</a>
+      <a href="#donate" class="btn">Donate Now</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Donate Blood. Save Lives.</h1>
+      <p>
+        Your small act of kindness can give someone a second chance at life.
+        Join our community of donors and make a meaningful difference today.
+      </p>
+      <a href="#donate" class="btn">Become a Donor</a>
+    </div>
+    <div class="blood-drop"></div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>Why Donate Blood?</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">❤️</div>
+        <h3>Save Lives</h3>
+        <p>One blood donation can help save up to three lives in an emergency.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🩸</div>
+        <h3>Quick & Safe</h3>
+        <p>The donation process is safe, simple, and usually takes less than an hour.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Help Your Community</h3>
+        <p>Support patients, hospitals, and families in your local community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="donate">
+    <h2>Register as a Blood Donor</h2>
+
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+
+      <select required>
+        <option value="">Select Blood Group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+      </select>
+
+      <input type="text" placeholder="City / Location" required />
+      <input type="number" placeholder="Age" min="18" max="65" required />
+
+      <select class="full" required>
+        <option value="">Have you donated blood before?</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <button type="submit" class="submit-btn full">Register Now</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2026 LifeDrop Blood Donation Center · Every drop counts.
+  </footer>
+
+</body>
+</html>
